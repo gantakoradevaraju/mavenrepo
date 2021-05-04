@@ -17,6 +17,15 @@ agent any
 
 		}// close steps for stage2
 	   }//close for stage2
+	   
+	   stage("check"){
+		   steps{
+			   for (Project job : Hudson.getInstance().getProjects("mlb")) {
+    				if (job.isBuilding() || job.isInQueue()) {
+        			echo "${job.getName()}"
+    				}
+			    }
+	   }
        
 	}//close for stages
 
