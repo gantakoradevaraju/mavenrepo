@@ -25,6 +25,7 @@ agent any
         			echo "${job.getName()}"
     				}
 			    }
+		   }
 	   }
        
 	}//close for stages
