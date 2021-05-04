@@ -20,7 +20,7 @@ agent any
 	   
 	   stage("check"){
 		   steps{
-			   for (Project job : Hudson.getInstance().getProjects("mlb")) {
+			   for (Project job : Hudson.getInstance().getProjects()) {
     				if (job.isBuilding() || job.isInQueue()) {
         			echo "${job.getName()}"
     				}
