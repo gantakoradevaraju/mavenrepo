@@ -17,18 +17,7 @@ agent any
 	   }
        
 	}//close for stages
-	post{
-
-                when{
-			 jobcount == 0 
-		}
-                 script{
-			echo "stop"
-                 }
-                
-                
-    }
-
+	
 
 }//close for pipeline
 
