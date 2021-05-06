@@ -8,7 +8,7 @@ agent any
 	
 	   stage("check"){
 		   steps{
-			   jobcount = Hudson.instance.queue.items.length
+			   function()
 			   script {
 				   echo "${jobcount}"
 			   }
@@ -23,6 +23,7 @@ agent any
 def function()
 {
 	println Hudson.instance.queue.items.length
+	jobcount = Hudson.instance.queue.items.length
 	for (Project job : Hudson.getInstance().getProjects()) {
 			echo "${job.getName()}"
     				if (job.isBuilding() || job.isInQueue()) {
