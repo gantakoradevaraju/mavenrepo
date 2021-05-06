@@ -1,10 +1,9 @@
 
-def jobcount = 0
+def jobcount = ""
 pipeline{
 agent any
    stages{
-	
-		
+			
 	
 	   stage("check"){
 		   steps{
@@ -18,10 +17,9 @@ agent any
        
 	}//close for stages
 	
-
 }//close for pipeline
 
-def function =
+def function()
 {
 	println Hudson.instance.queue.items.length
 	jobcount = Hudson.instance.queue.items.length
