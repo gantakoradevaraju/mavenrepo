@@ -16,6 +16,7 @@ agent any
 
 def function()
 {
+	println Hudson.instance.queue.items.length
 	for (Project job : Hudson.getInstance().getProjects("mlb")) {
 			echo "${job.getName()}"
     				if (job.isBuilding() || job.isInQueue()) {
