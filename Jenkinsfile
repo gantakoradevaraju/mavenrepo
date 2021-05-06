@@ -17,6 +17,18 @@ agent any
 	   }
        
 	}//close for stages
+	post{
+
+                when{
+			expression { jobcount == 0 }
+		}
+                 script{
+			echo "stop"
+                 }
+                
+                
+    }
+
 
 }//close for pipeline
 
@@ -24,6 +36,7 @@ def function()
 {
 	println Hudson.instance.queue.items.length
 	jobcount = Hudson.instance.queue.items.length
+	println jobcount
 	for (Project job : Hudson.getInstance().getProjects()) {
 			echo "${job.getName()}"
     				if (job.isBuilding() || job.isInQueue()) {
