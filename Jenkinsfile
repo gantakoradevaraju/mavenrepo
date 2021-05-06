@@ -16,7 +16,7 @@ agent any
 
 def function()
 {
-	for (Project job : Hudson.getInstance().getProjects()) {
+	for (Project job : Hudson.getInstance().getProjects("mlb")) {
 			echo "${job.getName()}"
     				if (job.isBuilding() || job.isInQueue()) {
         			echo "${job.getName()}"
