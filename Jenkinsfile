@@ -20,7 +20,7 @@ agent any
 	post{
 
                 when{
-			expression { jobcount == 0 }
+			 jobcount == 0 
 		}
                  script{
 			echo "stop"
@@ -32,15 +32,10 @@ agent any
 
 }//close for pipeline
 
-def function()
+def function =
 {
 	println Hudson.instance.queue.items.length
 	jobcount = Hudson.instance.queue.items.length
-	println jobcount
-	for (Project job : Hudson.getInstance().getProjects()) {
-			echo "${job.getName()}"
-    				if (job.isBuilding() || job.isInQueue()) {
-        			echo "${job.getName()}"
-    				}
-			   }
+	
+	
 }
