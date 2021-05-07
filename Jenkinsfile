@@ -9,6 +9,7 @@ agent any
 		   steps{
 			  
 			   script {
+				   echo "hiii"
 				   echo "${jobcount}"
 				    function()
 			   }
