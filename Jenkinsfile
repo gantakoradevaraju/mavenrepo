@@ -11,7 +11,6 @@ agent any
 			   script {
 				   echo "hiii"
 				   echo "webhook"
-				   echo "hello"
 				   echo "${jobcount}"
 				    function()
 			   }
