@@ -7,9 +7,10 @@ agent any
 	
 	   stage("check"){
 		   steps{
-			   function()
+			  
 			   script {
 				   echo "${jobcount}"
+				    function()
 			   }
 			  
 		   }
